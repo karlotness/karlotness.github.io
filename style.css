@@ -1,0 +1,55 @@
+.grid-brief {
+    grid-area: brief;
+}
+
+.grid-pic {
+    grid-area: pic;
+    align-self: center;
+    justify-self: center;
+}
+
+.grid-contact {
+    grid-area: contact;
+}
+
+.grid-about {
+    grid-area: about;
+}
+
+.grid-pic img {
+    width: 200px;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-areas:
+        "brief"
+        "pic"
+        "contact"
+        "about";
+}
+
+@media (min-width: 500px) {
+    main {
+        max-width: 43rem;
+        margin: 0px auto;
+    }
+
+    .grid-wrapper {
+        grid-template-columns: min-content auto;
+        grid-template-areas:
+            "pic brief"
+            "pic contact"
+            "about about";
+        grid-template-rows: min-content 1fr auto;
+    }
+
+    .grid-pic img {
+        margin: 0px 1.5rem 0px 0px;
+    }
+
+    .grid-about {
+        border-top: 1px solid;
+        margin: 0.5rem 0px 0px 0px;
+    }
+}
